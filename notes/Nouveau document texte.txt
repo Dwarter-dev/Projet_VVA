@@ -1,0 +1,15 @@
+      <th><?= $_SESSION['CODETYPEANIM'] ?></th>
+      <th><?= $_SESSION['NOMANIM']  ?></th>
+      <th><?= $_SESSION['DATECREATIONANIM'] ?></th>
+      <th><?= $_SESSION['DATEVALIDITEANIM'] ?></th>
+      <th><?= $_SESSION['NBREPLACEANIM'] ?></th>
+      <th><?= $_SESSION['DESCRIPTANIM']  ?></th>
+      <th><?= $_SESSION['COMMENTANIM']  ?></th>
+      <th><?= $_SESSION['DIFFICULTEANIM']  ?></th>
+
+
+
+<?php
+	include('././fonctions/animation.php');
+	getAnimation();
+?>

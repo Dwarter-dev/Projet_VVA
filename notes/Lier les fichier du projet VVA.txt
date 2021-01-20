@@ -1,0 +1,11 @@
+1. Créer un fichier
+2. Ajouter le chemin de direction dans l'index.php. Forme :
+
+        case 'Nom_de_l'action':
+        include('chemin_du_fichier'); // Exemple ('controls/user/accueil.php')
+        break;
+
+3. Si on ajoute dans la navbar : 
+	- Aller dans userAccueil.php (ou le dossier qui contient les éléments de la navbar)
+	- Copier-Coller d'un ancien modèle (ex : <a class="nav-item nav-link" href="index.php?page=deconnexion">Deconnexion</a>)
+	- Modifier le mot de fin du href par le nom donnée au case de l'index (ici : deconnexion)
