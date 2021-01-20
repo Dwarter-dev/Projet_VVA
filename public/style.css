@@ -1,0 +1,67 @@
+form {
+    width: 70vw;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+h1.titreFormConnect{ /*titreFormConnect permet de différencier le h1 des autres h1 dans le projet*/
+    color: #398ac7;
+    margin-left: 100px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    margin: auto;
+    text-shadow: 4px 4px 4px #398ac7;
+}
+label{
+    color: #388055;
+    margin-bottom: 8px;
+}
+/* Paramètres des user et mdp */
+input[type=text], input[type=password] {
+    width: 65%;
+    padding: 10px 15px;
+    margin: 0 auto;
+    display: inline-block;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* Fixer un style pour tout les boutons */
+input[type=submit] {
+    width: 40%;
+    background-color: #53af57;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 2vh;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div.body {
+  min-height: 100vh;
+  padding-top: 15vh;
+}
+
+div.formConnect {
+  background-image:url("images/14.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+form.animation{
+  position: relative;
+  top: 0px; left: 0px;
+}
