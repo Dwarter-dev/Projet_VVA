@@ -25,3 +25,4 @@ if(isset($_POST['envoyer']))
   }
   mysqli_close($conn);
 }
+header('Location: http://vva/index.php?page=consulterAnimation');
