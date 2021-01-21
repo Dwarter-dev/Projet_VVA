@@ -31,47 +31,47 @@
   </ul>
 </nav>
 <title>Créer une activité</title>
-<form action="index.php?page=consulterActivite" method="POST" id="inscActivite" name="form">
-	<div class="form-group">
-		<label for="nomActivite" class="col-sm-2 col-form-label col-form-label">Nom de l'activité</label>
-		<input name"nomActivite" id="" type="text" class="form-control" placeholder="ex : Randonée">
+<form action="../../controls/activite/traitement.php" method="POST" id="inscActivite">
+  <div class="form-group">
+		<label for="CodeAnimation" class="col-sm-2 col-form-label col-form-label">Code de l'animation</label>
+		<input name="CODEANIM" id="CODEANIM" type="text" class="form-control">
 	</div>
-  <div class="form-group col-10">
-      <label for="dateCreaActivite">Date de création</label>
-      <input name"dateCreaActivite" id="dateCreaActivite" type="date" class="form-control" >
+  <div class="form-group">
+    <label for="CodeEtatActivite" class="col-sm-2 col-form-label col-form-label">Etat de l'activité</label>
+    <input name="CODEETATACT" id="CODEETATACT" type="text" class="form-control">
   </div>
   <div class="form-group col-10">
-      <label for="dateValidActivite">Date de validitée</label>
-      <input name"dateValidActivite" id="dateValidActivite" type="date" class="form-control" >
+      <label for="dateCreaActivite">Date de l'activité</label>
+      <input name="DATEACT" id="DATEACT" type="date" class="form-control" >
   </div>
+	<div class="form-group col-10">
+			<label for="PrixActivite">Prix de l'activité</label>
+			<input name="PRIXACT" id="PRIXACT" type="number" class="form-control" >
+	</div>
   <div class="form-group col-10">
-			<label for="heureActivite">Âge Minimum</label>
-			<input name"heureActivite" id="heureActivite" type="number" class="form-control">
+      <label for="hrActivite">Heure de l'activité</label>
+      <input name="HRRDVACT" id="HRRDVACT" type="time" class="form-control" placeholder="ex : 10:00">
+  </div>
+	<div class="form-group col-10">
+			<label for="hrDebutActivite">Heure Début</label>
+			<input name="HRDEBUTACT" id="HRDEBUTACT" type="time" class="form-control" placeholder="ex : 10:00">
 	</div>
-	<div class="form-group">
-			<label for="tarifActivite" class="col-sm-2 col-form-label col-form-label">Tarif</label>
-			<input name"tarifActivite" id="tarifActivite" type="text" class="form-control" >
-	</div>
-	<div class="form-group">
-			<label for="hrDebutActivite" class="col-sm-2 col-form-label col-form-label">Heure Debut</label>
-			<input name"hrDebutActivite" id="hrDebutActivite" type="text" class="form-control" placeholder="ex : 10:00">
-	</div>
-	<div class="form-group">
-		<label for="hrFinActivite" class="col-sm-2 col-form-label col-form-label">Heure Fin</label>
-		<input name"hrFinActivite" id="hrFinActivite" type="text" class="form-control" placeholder="ex : 12:00">
+	<div class="form-group col-10">
+		<label for="hrFinActivite">Heure Fin</label>
+		<input name="HRFINACT" id="HRFINACT" type="time" class="form-control" placeholder="ex : 12:00">
 	</div>
 	<div class="form-group col-10">
 		<label for="dtAnnulActivite">Date d'annulation</label>
-		<input name"dtAnnulActivite" id="dtAnnulActivite" type="date" class="form-control" >
+		<input name="DATEANNULEACT" id="DATEANNULEACT" type="date" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label for="nomRActivite" class="col-sm-2 col-form-label col-form-label">Nom du Responsable</label>
-		<input name"nomRActivite" id="nomRActivite" type="text" class="form-control">
+		<input name="NOMRESP" id="NOMRESP" type="text" class="form-control">
 	</div>
   <div class="form-group">
     <label for="prenomRActivite" class="col-sm-2 col-form-label col-form-label">Prénom du Responsable</label>
-    <input name"prenomRActivite" id="prenomRActivite" type="text" class="form-control">
+    <input name="PRENOMRESP" id="PRENOMRESP" type="text" class="form-control">
   </div>
-		<input name="valid" type="submit" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal"  value="Création de l'activitée">
+		<input  type="submit" name="envoyer" class="btn btn-outline-light">
     <button type="reset" class="btn btn-outline-danger">Vider le formulaire</button>
 </form>
