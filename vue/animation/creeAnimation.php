@@ -80,6 +80,8 @@
     <label for="descripAnimation">Description</label>
     <textarea name="DESCRIPTANIM" id="DESCRIPTANIM" type="text" class="form-control" id="descripAnimation" rows="3"></textarea>
   </div>
-		<input type="submit" name="envoyer"class="btn btn-outline-light">
+  <div class="form-group col-10">
+    <input type="submit" name="envoyer"class="btn btn-outline-light">
     <button type="reset" class="btn btn-outline-danger">Vider le formulaire</button>
+  </div>
 </form>

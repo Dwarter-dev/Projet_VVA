@@ -72,6 +72,8 @@
     <label for="prenomRActivite" class="col-sm-2 col-form-label col-form-label">Prénom du Responsable</label>
     <input name="PRENOMRESP" id="PRENOMRESP" type="text" class="form-control">
   </div>
-		<input  type="submit" name="envoyer" class="btn btn-outline-light">
+  <div class="form-group col-10">
+    <input type="submit" name="envoyer"class="btn btn-outline-light">
     <button type="reset" class="btn btn-outline-danger">Vider le formulaire</button>
+  </div>
 </form>
