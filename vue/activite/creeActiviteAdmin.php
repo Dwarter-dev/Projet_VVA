@@ -5,7 +5,7 @@
 		  <a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Activité
+          Activités
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="index.php?page=consulterActiviteAdmin">Consulter une Activite</a>
