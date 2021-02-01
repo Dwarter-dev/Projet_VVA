@@ -2,15 +2,23 @@
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
 		  <a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
-		  <a class="nav-item nav-link" href="index.php?page=userProfil">Profil</a>
-		  <a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
+		  <a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Activité
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="index.php?page=consulterActiviteAdmin">Consulter une Activite</a>
+          <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
+        </div>
+      </li>
 		<li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Animations
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
-        <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
+        <a class="dropdown-item" href="index.php?page=creeAnimationAdmin">Créer une Animation</a>
+        <a class="dropdown-item" href="index.php?page=consulterAnimationAdmin">Consulter une Animation</a>
       </div>
     </li>
     <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
