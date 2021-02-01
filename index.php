@@ -15,24 +15,36 @@ if(!empty($_GET['page'])) {
         case 'deconnexion':
         stopSession();
         break;
-        case 'userProfil':
-        include('vue/user/userProfil.php');
+        case 'userProfilUser':
+        include('vue/user/userProfilUser.php');
         break;
-        case 'creeAnimation':
-        include('vue/animation/creeAnimation.php');
+        case 'userProfilAdmin':
+        include('vue/user/userProfilAdmin.php');
         break;
-        case 'consulterAnimation':
-        include('vue/animation/consulterAnimation.php');
+        case 'creeAnimationAdmin':
+        include('vue/animation/creeAnimationAdmin.php');
         break;
-        case 'creeActivite':
-        include('vue/activite/creeActivite.php');
+        case 'consulterAnimationAdmin':
+        include('vue/animation/consulterAnimationAdmin.php');
         break;
-        case 'consulterActivite':
-        include('vue/activite/consulterActivite.php');
+        case 'creeActiviteAdmin':
+        include('vue/activite/creeActiviteAdmin.php');
+        break;
+        case 'consulterActiviteAdmin':
+        include('vue/activite/consulterActiviteAdmin.php');
+        break;
+        case 'consulterActiviteUser':
+        include('vue/activite/consulterActiviteUser.php');
+        break;
+        case 'inscription':
+        include('vue/activite/inscription.php');
+        break;
+        /*case 'InscriptionAdmin'
+        include('vue/activite/inscriptionAdmin.php');
         break;
         case 'Test':
         include('vue/activite/index2.php');
-        break;
+        break;*/
     }
 } else {
     header('Location: index.php?page=accueil');
