@@ -18,11 +18,11 @@ if(isset($_POST['envoyer']))
   $sql = "INSERT INTO animation (NOMANIM, CODEANIM, CODETYPEANIM, DATECREATIONANIM, DATEVALIDITEANIM, DUREEANIM, LIMITEAGE, TARIFANIM, NBREPLACEANIM, DIFFICULTEANIM, COMMENTANIM, DESCRIPTANIM)
   VALUES ('$NOMANIM','$CODEANIM','$CODETYPEANIM','$DATECREATIONANIM','$DATEVALIDITEANIM','$DUREEANIM','$LIMITEAGE','$TARIFANIM','$NBREPLACEANIM','$DIFFICULTEANIM','$COMMENTANIM','$DESCRIPTANIM')";
   if (mysqli_query($conn, $sql)) {
-        echo "Création du profil dans la base de donnée";
+        echo "Création de l'animation dans la base de donnée";
   }
   else {
         echo "Erreur : " . $sql . "<br>" . mysqli_error($conn);
   }
   mysqli_close($conn);
 }
-header('Location: http://vva/index.php?page=consulterAnimation');
+header('Location: http://vva/index.php?page=consulterAnimationAdmin');
