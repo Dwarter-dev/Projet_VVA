@@ -1,6 +1,6 @@
 <?php
 if(!empty($_SESSION['TYPEPROFIL'])) {
-  require('vue/user/userAccueil.php');
+  require('vue/user/userAccueilAdmin.php');
 } else {
   require('vue/user/formConnect.html');
 }
