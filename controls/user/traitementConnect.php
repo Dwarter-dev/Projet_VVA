@@ -1,5 +1,5 @@
 <?php
-	include('../../fonctions/user.php'); // on inclue le fichier user.php qui n'est pas présent dans le dossier Conexion
+	include('../../fonctions/user.php');
   /*On défini les valeurs*/
 	$user = $_POST['pseudo']; // 'pseudo' est dans la form et $user est la valeur qu'on lui attribut
 	$mdp = $_POST['mdp'];     // idem pour 'mdp'
