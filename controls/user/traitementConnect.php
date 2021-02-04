@@ -8,7 +8,14 @@
 	/*Vérifie si l'utilisateur et le mdp sont présent ou non*/
 	if(!empty($user) && !empty($mdp)) {
 		if(getUser($user, $mdp)) {
-			header('Location: ../../index.php?page=accueil');
+			/*die (var_dump($_SESSION));*/
+			if($_SESSION['TYPEPROFIL'] === 'EN')
+			{
+				header('Location: ../../index.php?page=userProfilAdmin');
+			}
+			elseif ($_SESSION['TYPEPROFIL'] === 'VA') {
+				header('Location: ../../index.php?page=userProfilUser');
+			}
 		} else {
 			echo "la connexion a échouée.";
 			echo "<html></br> <a href='../../index.php?page=accueil'>Retour à Connexion</a><html>";
