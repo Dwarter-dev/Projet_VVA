@@ -1,3 +1,15 @@
+<?php
+if ($_SESSION["TYPEPROFIL"] === 'VA')
+{
+	header("Location: index.php?page=consulterActiviteUser");
+	exit();
+}
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-dark">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
