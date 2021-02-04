@@ -39,6 +39,9 @@ if(!empty($_GET['page'])) {
         case 'inscription':
         include('vue/activite/inscription.php');
         break;
+        case 'vueinscription':
+        include('vue/activite/vueinscription.php');
+        break;
         /*case 'InscriptionAdmin'
         include('vue/activite/inscriptionAdmin.php');
         break;
