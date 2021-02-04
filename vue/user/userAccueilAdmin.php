@@ -1,10 +1,22 @@
+<?php
+if ($_SESSION["TYPEPROFIL"] === 'VA')
+{
+	header("Location: index.php?page=userAccueilUser");
+	exit();
+}
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light" style="background-color: #398ac7"> <!-- Base physique de la page d'accueil-->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
+			<a class="nav-item nav-link" href="#">Village Vacances Alpes </a>
 			<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
 			<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,22 +1,19 @@
+<?php
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
 			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
 			<li class="nav-item dropdown">
-		  	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    	Animations
-		    </a>
-		    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		      <a class="dropdown-item" href="index.php?page=creeAnimationUser">Créer une Animation</a>
-		    	<a class="dropdown-item" href="index.php?page=consulterAnimationUser">Consulter une Animation</a>
-		    </div>
-	  	</li>
-			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Activités
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActiviteUser">Créer une Activite</a>
 					<a class="dropdown-item" href="index.php?page=consulterActiviteUser">Consulter une Activite</a>
           <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
 				</div>

@@ -1,8 +1,15 @@
+<?php
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-dark">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
 		<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
-		<a class="nav-item nav-link" href="index.php?page=userProfil">Profil</a>
+		<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
     <a class="nav-item nav-link" href="index.php?page=inscription">S'inscrire à une activité</a>
 	</div>

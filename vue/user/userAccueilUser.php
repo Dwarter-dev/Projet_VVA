@@ -1,30 +1,27 @@
+<?php
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-light" style="background-color: #398ac7"> <!-- Base physique de la page d'accueil-->
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
+			<a class="nav-item nav-link" href="#">Village Vacances Alpes </a>
 			<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
 			<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Animations
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php?page=creeAnimationUser">Créer une Animation</a>
           <a class="dropdown-item" href="index.php?page=consulterAnimationUser">Consulter une Animation</a>
+					<a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
         </div>
       </li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Activités
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActiviteUser">Créer une Activite</a>
-					<a class="dropdown-item" href="index.php?page=consulterActiviteUser">Consulter une Activite</a>
-					<a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
-				</div>
-			</li>
 			<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 		</div>
 </nav>
