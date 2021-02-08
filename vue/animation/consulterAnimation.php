@@ -15,14 +15,14 @@ if (empty($_SESSION))
     <ul class="navbar-nav mr-auto">
 			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
 			<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
-			<a class="nav-item nav-link" href="index.php?page=creeAnimationAdmin">Créer une Animation</a>
+			<a class="nav-item nav-link" href="index.php?page=creeAnimation">Créer une Animation</a>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Activités
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActiviteAdmin">Créer une Activite</a>
-					<a class="dropdown-item" href="index.php?page=consulterActiviteAdmin">Consulter une Activite</a>
+					<a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activite</a>
+					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
           <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
 				</div>
       </li>
