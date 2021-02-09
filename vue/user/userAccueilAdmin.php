@@ -23,8 +23,8 @@ if (empty($_SESSION))
           Animations
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php?page=creeAnimationAdmin">Créer une Animation</a>
-          <a class="dropdown-item" href="index.php?page=consulterAnimationAdmin">Consulter une Animation</a>
+          <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
+          <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
         </div>
       </li>
 			<li class="nav-item dropdown">
@@ -32,8 +32,8 @@ if (empty($_SESSION))
 					Activités
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActiviteAdmin">Créer une Activite</a>
-					<a class="dropdown-item" href="index.php?page=consulterActiviteAdmin">Consulter une Activite</a>
+					<a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activite</a>
+					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
 					<a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
 				</div>
 			</li>
