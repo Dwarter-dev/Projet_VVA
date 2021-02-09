@@ -14,7 +14,7 @@ if (empty($_SESSION))
 					Activités
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=consulterActiviteUser">Consulter une Activite</a>
+					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
           <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
 				</div>
 			</li>
@@ -47,7 +47,12 @@ if (empty($_SESSION))
 	    ﻿<ul>
 				<li>Votre nom complet est : <?= $_SESSION['NOMCOMPTE'] . $_SESSION['PRENOMCOMPTE'] ?></li>
 	    ﻿  <li>Votre date d'inscription est le : <?= $_SESSION['DATEINSCRIP'] ?></li>
-			 	<li>Votre type de profil est : <?= $_SESSION['TYPEPROFIL'] ?></li>
+			 	<li>Votre type de profil est : <?php
+				if ($_SESSION["TYPEPROFIL"] === 'VA')
+				{
+					echo 'Vacancier';
+				}?>
+				</li>
 				<li>Votre date de début de séjour est le : <?= $_SESSION['DATEDEBSEJOUR'] ?></li>
 				<li>Votre date de fin de séjour est le : <?= $_SESSION['DATEFINSEJOUR'] ?></li>
 	      <li>Votre mail est : <?= $_SESSION['ADRMAILCOMPTE'] ?></li>

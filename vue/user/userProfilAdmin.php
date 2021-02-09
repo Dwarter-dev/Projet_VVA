@@ -19,8 +19,8 @@ if (empty($_SESSION))
 		    	Animations
 		    </a>
 		    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		      <a class="dropdown-item" href="index.php?page=creeAnimationAdmin">Créer une Animation</a>
-		    	<a class="dropdown-item" href="index.php?page=consulterAnimationAdmin">Consulter une Animation</a>
+		      <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
+		    	<a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
 		    </div>
 	  	</li>
 			<li class="nav-item dropdown">
@@ -28,8 +28,8 @@ if (empty($_SESSION))
 					Activités
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActiviteAdmin">Créer une Activite</a>
-					<a class="dropdown-item" href="index.php?page=consulterActiviteAdmin">Consulter une Activite</a>
+					<a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activite</a>
+					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
           <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
 				</div>
 			</li>
@@ -62,7 +62,12 @@ if (empty($_SESSION))
 	    ﻿<ul>
 				<li>Votre nom complet est : <?= $_SESSION['NOMCOMPTE'] . $_SESSION['PRENOMCOMPTE'] ?></li>
 	    ﻿  <li>Votre date d'inscription est le : <?= $_SESSION['DATEINSCRIP'] ?></li>
-			 	<li>Votre type de profil est : <?= $_SESSION['TYPEPROFIL'] ?></li>
+			 	<li>Votre type de profil est : <?php
+				if ($_SESSION["TYPEPROFIL"] === 'EN')
+				{
+					echo 'Encadrant';
+				}?>
+				</li>
 				<li>Votre date de début de séjour est le : <?= $_SESSION['DATEDEBSEJOUR'] ?></li>
 				<li>Votre date de fin de séjour est le : <?= $_SESSION['DATEFINSEJOUR'] ?></li>
 	      <li>Votre mail est : <?= $_SESSION['ADRMAILCOMPTE'] ?></li>
