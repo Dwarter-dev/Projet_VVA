@@ -15,12 +15,12 @@ if (empty($_SESSION))
 			<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
 			<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Animations
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="index.php?page=consulterAnimationUser">Consulter une Animation</a>
-					<a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
-        </div>
+					Activités
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
+          <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
+				</div>
       </li>
 			<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 		</div>
