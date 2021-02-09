@@ -9,7 +9,17 @@ if (empty($_SESSION))
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
 		  <a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
-		  <a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
+			<?php
+			if ($_SESSION["TYPEPROFIL"] === 'EN')
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>';
+			}
+			else
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+			}
+			 ?>
+			<a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
     <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 	</div>
 	<div class="mx-auto order-0">
@@ -27,7 +37,7 @@ if (empty($_SESSION))
   </div>
   </ul>
 </nav>
-<title>Créer une activité</title>
+<title>S'inscrire à une animation</title>
 <form action="../../controls/inscription/traitement.php" method="POST" id="inscActivite">
   <div class="form-group">
 		<label for="User" class="col-sm-2 col-form-label col-form-label">Nom de l'inscrit</label>
@@ -38,7 +48,7 @@ if (empty($_SESSION))
     <input name="NOACT" id="NOACT" type="text" class="form-control">
   </div>
   <div class="form-group col-10">
-      <label for="dateIncription">Date d'inscription'</label>
+      <label for="dateIncription">Date d'inscription</label>
       <input name="DATEINSCRIP" id="DATEINSCRIP" type="date" class="form-control" >
   </div>
   <div class="form-group col-10">

@@ -9,7 +9,16 @@ if (empty($_SESSION))
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
 		<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
-		<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
+		<?php
+		if ($_SESSION["TYPEPROFIL"] === 'EN')
+		{
+			echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>';
+		}
+		else
+		{
+			echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+		}
+		 ?>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
     <a class="nav-item nav-link" href="index.php?page=inscription">S'inscrire à une activité</a>
 	</div>
