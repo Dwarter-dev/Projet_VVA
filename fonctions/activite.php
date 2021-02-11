@@ -12,8 +12,9 @@ function getActivites() {
     "
     SELECT *
     FROM activite
+    WHERE activite.DATEANNULEACT = '0000-00-00'
     ";
-
+    /*Condition qu'il n'y ai pas de date d'annulation sinon on masque la donnée*/
     $res = mysqli_query($con, $req);
     $activite = []; //Va regrouper toutes les animations
 
