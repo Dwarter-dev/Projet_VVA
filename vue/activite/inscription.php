@@ -19,6 +19,23 @@ if (empty($_SESSION))
 				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
 			}
 			 ?>
+			 <li class="nav-item dropdown">
+			 		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Activités </a>
+			    	<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			      	<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+			        	<ul class="dropdown-menu">
+			          	<li><a class="dropdown-item" href="#">Consulter les Activités</a></li>
+			            <li><a class="dropdown-item" href="#">Créer une Activité</a></li>
+			           </ul>
+			        </li>
+			        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des Inscriptions</a>
+			         	<ul class="dropdown-menu">
+			            <li><a class="dropdown-item" href="#">Inscription à une activité</a></li>
+			          	<li><a class="dropdown-item" href="#">Consulter la liste des Inscrptions</a></li>
+			        	</ul>
+			        </li>
+			      </ul>
+			 </li>
 			<a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
     <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 	</div>
