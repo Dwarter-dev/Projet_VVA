@@ -66,7 +66,6 @@ if (empty($_SESSION))
 	</div>
   </ul>
 </nav>
-<div class="container">
 	<table class="table">
 		<thead class="thead-dark">
 	    <tr>
@@ -81,13 +80,16 @@ if (empty($_SESSION))
 	      <th scope="col">Date d'annulation Activite</th>
 	      <th scope="col">Nom du Responsable</th>
 				<th scope="col">Prénom du Responsable</th>
-				<th scope="col">Action</th>
+				<?php
+				if ($_SESSION["TYPEPROFIL"] === 'EN')
+				{
+					echo'<th scope="col">Inscriptions</th>
+							 <th scope="col">Action</th>';
+				} ?>
 	    </tr>
 		</thead>
-
 	      <?php
 				include_once('././fonctions/activite.php');
-
 				$activite = getActivites();
 				// Tableau des activités avec pour index le numéro de l'activité
 				$tabActivites = [];
@@ -96,7 +98,6 @@ if (empty($_SESSION))
 				{
 					$tabActivites[$item['NOACT']] = $item;
 				}
-
 				for($acti = 0; $acti < count($activite); $acti++)
 				{
 					echo "<tr>";
@@ -104,16 +105,67 @@ if (empty($_SESSION))
 					{
 						echo "<td>".$value."</td>";
 					}
+					if ($_SESSION["TYPEPROFIL"] === 'EN')
+					{
 					// A la fin du tableau on ajoute une colonne Actions permettant
 					// D'annuler une activité ou de modifier une activité via son numéro
 					$idActivity = $activite[$acti]["NOACT"];
+					$codeActivity = $activite[$acti]["CODEANIM"];
+					$etatActivity = $activite[$acti]["CODEETATACT"];
+					$dtActivity = $activite[$acti]["DATEACT"];
+					$hrActivity = $activite[$acti]["HRRDVACT"];
+					$prixActivity = $activite[$acti]["PRIXACT"];
+					$hrdebutActivity = $activite[$acti]["HRDEBUTACT"];
+					$hrfinActivity = $activite[$acti]["HRFINACT"];
+					$dt = $activite[$acti]["DATEANNULEACT"];
+					$nomresp = $activite[$acti]["NOMRESP"];
+					$prenomresp = $activite[$acti]["PRENOMRESP"];
+					echo "<td>";
+					echo "<a href='index.php?page=inscription'>S'Inscrire</a>";
+					echo '<br>';
+					echo "<a href='index.php?page=inscription'>Liste des inscrits</a>";
+					echo '</td>';
 					echo '<td>';
-					echo '<a href="index.php?page=editionActivite&id='.$idActivity.'">Editer </a>';
-					echo '<a href="#">Annuler </a>';
+					echo '<a href="index.php?page=editionActivite
+					&id='.$idActivity.'
+					&code='.$codeActivity.'
+					&etat='.$etatActivity.'
+					&dt='.$dtActivity.'
+					&hr='.$hrActivity.'
+					&prix='.$prixActivity.'
+					&hrdebut='.$hrdebutActivity.'
+					&hrfin='.$hrfinActivity.'
+					&dtannul='.$dt.'
+					&nomresp='.$nomresp.'
+					&prenomresp='.$prenomresp.'
+					">Editer </a>';
+					echo
+					'<a href="#" data-toggle="modal" data-target="#bannerformmodal-'. $idActivity .'">Annuler</a>
+					<div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal-'.$idActivity.'">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel-'.$idActivity.'">Annuler une Activité</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					      	Êtes-vous sur de vouloir annuler cette activitée ?
+					      </div>
+					      <div class="modal-footer">
+								<form method="POST" action="../../controls/activite/masqueractivite.php?id='.$idActivity.'" id="form-'.$idActivity.'">
+					        <button type="button" class="btn btn-primary"data-dismiss="modal"> Pas Encore </button>
+					        <button type="submit" name="envoyerdelete" class="btn btn-danger"> Oui, annuler cette Activité </button>
+								</form>
+					      </div>
+					    </div>
+					  </div>
+					</div>';
 					echo '</td>';
 					echo "</tr>";
 				}
+			}
 				?>
-
 	</table>
 </div>
