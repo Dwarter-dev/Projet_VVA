@@ -38,7 +38,6 @@ if (empty($_SESSION))
   </ul>
 </nav>
 
-<!-- Prendre toutes les données de l'activité et la comparer à l'id récupérer-->
 <form action="../../controls/activite/traitementedit.php" method="POST" id="editActivite">
 		<input name="NOACT" id="NOACT" type="hidden" class="form-control" value="<?=$_GET['id']?>">
 	<div class="form-group">
@@ -82,6 +81,6 @@ if (empty($_SESSION))
 		<input name="PRENOMRESP" id="PRENOMRESP" type="text" class="form-control" value="<?=$_GET['prenomresp']?>">
 	</div>
 	<div class="form-group col-10">
-		<input type="submit" name="envoyeredit"class="btn btn-outline-light">
+		<input type="submit" name="envoyeredit" class="btn btn-outline-light">
 	</div>
 </form>
