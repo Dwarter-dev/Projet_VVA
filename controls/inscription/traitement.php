@@ -17,4 +17,4 @@ if(isset($_POST['envoyer']))
   }
   mysqli_close($conn);
 }
-header('Location: http://vva/index.php?page=vueinscription');
+header('Location: http://vva/index.php?page=vueInscription');
