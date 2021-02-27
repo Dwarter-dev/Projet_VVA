@@ -33,14 +33,17 @@ if(!empty($_GET['page'])) {
         case 'consulterActivite':
         include('vue/activite/consulterActivite.php');
         break;
-        case 'inscription':
-        include('vue/activite/inscription.php');
-        break;
-        case 'vueinscription':
-        include('vue/activite/vueinscription.php');
-        break;
         case 'editionActivite':
         include('vue/activite/editionActivite.php');
+        break;
+        case 'creeInscription':
+        include('vue/inscription/creeInscription.php');
+        break;
+        case 'vueInscription':
+        include('vue/inscription/vueInscription.php');
+        break;
+        case 'mesInscriptions':
+        include('vue/inscription/mesInscriptions.php');
         break;
     }
 } else {
