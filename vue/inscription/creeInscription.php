@@ -1,0 +1,83 @@
+<?php
+if (empty($_SESSION))
+{
+	header("Location: index.php?page=accueil");
+	exit();
+}
+?>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-light" style="background-color: #398ac7">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+		  <a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
+			<?php
+			if ($_SESSION["TYPEPROFIL"] === 'EN')
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>';
+			}
+			else
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+			}
+			 ?>
+			 <li class="nav-item dropdown">
+				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+					 <ul class="dropdown-menu">
+						 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+							 <ul class="dropdown-menu">
+								 <?php
+								 if ($_SESSION["TYPEPROFIL"] === 'EN')
+								 {
+									 echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>
+												 <li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>';
+								 }
+								 else
+								 {
+									 echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>';
+								 }
+								 ?>
+								</ul>
+						 </li>
+						 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
+							 <ul class="dropdown-menu">
+								 <?php
+								 if ($_SESSION["TYPEPROFIL"] === 'EN')
+								 {
+									 echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
+									 			 <li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
+								 }
+								 else
+								 {
+									 echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>';
+								 }
+								 ?>
+							 </ul>
+						 </li>
+					 </ul>
+			</li>
+		 <a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
+    <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
+	</div>
+	<div class="mx-auto order-0">
+		<a class="navbar-brand mx-auto" href="#">S'inscrire à une Activité</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+	    	<span class="navbar-toggler-icon"></span>
+	    </button>
+	</div>
+	<div class="navbar-collapse collapse w-100 order-3">
+	  	<ul class="navbar-nav ml-auto">
+	    	<li class="nav-item">
+	      	<a class="nav-link">Bonjour <?=$_SESSION['NOMCOMPTE']?> !</a>
+	      </li>
+			</ul>
+  </div>
+  </ul>
+</nav>
+<title>S'inscrire à une activité</title>
+
+<form action="../../controls/inscription/traitement.php" method="POST" id="inscActivite">
+	<input name="NOACT" id="NOACT" type="hidden" class="form-control" value="<?=$_GET['id']?>">
+	<input name="USER" id="USER" type="hidden" class="form-control" value="<?php echo $_SESSION['USER'];?>">
+  <input name="DATEINSCRIP" id="DATEINSCRIP" type="hidden" class="form-control" value="<?php echo date('Y-m-d'); ?>">
+  <input type="submit" name="envoyer"class="btn btn-outline-light">
+  </div>
+</form>
