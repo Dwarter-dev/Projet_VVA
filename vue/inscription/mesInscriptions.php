@@ -43,8 +43,24 @@ if (empty($_SESSION))
 							 </ul>
 						 </li>
 					 </ul>
-			</li>
-		 <a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
+			 </li>
+			 <?php
+			 if ($_SESSION["TYPEPROFIL"] === 'EN')
+			 {
+				 echo '<li class="nav-item dropdown">
+				 				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Animations </a>
+				 				 <ul class="dropdown-menu">
+				 					 <li><a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a></li>
+				 					 <li><a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a></li>
+				 				 </ul>
+				 			 </li>';
+			 }
+			 else
+			 {
+				 echo '';
+			 }
+			 ?>
+
     <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 	</div>
 	<div class="mx-auto order-0">

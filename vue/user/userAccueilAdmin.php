@@ -10,16 +10,22 @@ if (empty($_SESSION))
 	exit();
 }
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark navbar-light" style="background-color: #398ac7"> <!-- Base physique de la page d'accueil-->
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="#">Village Vacances Alpes </a>
-			<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>
+<nav class="navbar navbar-expand-md navbar-dark navbar-light" style="background-color: #398ac7">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
+			<?php
+			if ($_SESSION["TYPEPROFIL"] === 'EN')
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>';
+			}
+			else
+			{
+				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+			}
+			 ?>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Activités </a>
 					<ul class="dropdown-menu">
 						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
 							<ul class="dropdown-menu">
@@ -42,7 +48,7 @@ if (empty($_SESSION))
 								if ($_SESSION["TYPEPROFIL"] === 'EN')
 								{
 									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
-												<li><a class="dropdown-item" href="index.php?page=vueInscription>Liste des inscrits</a></li>';
+												<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
 								}
 								else
 								{
@@ -53,17 +59,29 @@ if (empty($_SESSION))
 						</li>
 					</ul>
 		 </li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Animations
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
-					<a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
-				</div>
-			</li>
-			<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
-		</div>
+		 <li class="nav-item dropdown">
+			 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Animations </a>
+			 <ul class="dropdown-menu">
+				 <li><a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a></li>
+				 <li><a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a></li>
+			 </ul>
+		 </li>
+		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
+		</ul>
+	</div>
+	<div class="mx-auto order-0">
+		<a class="navbar-brand mx-auto" href="#">Profil</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
+	<div class="navbar-collapse collapse w-100 order-3">
+  	<ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link">Bonjour <?=$_SESSION['NOMCOMPTE']?> !</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <table summary border="1">

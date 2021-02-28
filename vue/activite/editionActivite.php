@@ -58,14 +58,12 @@ if (empty($_SESSION))
 			if ($_SESSION["TYPEPROFIL"] === 'EN')
 			{
 				echo '<li class="nav-item dropdown">
-					 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						 Animations
-					 </a>
-					 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						 <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
-						 <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
-					 </div>
-				 </li>';
+							 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Animations </a>
+							 <ul class="dropdown-menu">
+								 <li><a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a></li>
+								 <li><a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a></li>
+							 </ul>
+						 </li>';
 			}
 			else
 			{

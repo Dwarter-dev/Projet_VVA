@@ -50,13 +50,11 @@ if (empty($_SESSION))
 					</ul>
 		 </li>
 		 <li class="nav-item dropdown">
-			 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 Animations
-			 </a>
-			 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				 <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
-				 <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
-			 </div>
+			 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Animations </a>
+			 <ul class="dropdown-menu">
+				 <li><a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a></li>
+				 <li><a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a></li>
+			 </ul>
 		 </li>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 		</ul>
