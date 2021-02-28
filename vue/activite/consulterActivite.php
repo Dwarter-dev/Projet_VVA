@@ -12,18 +12,51 @@ if (empty($_SESSION))
 		<?php
 		if ($_SESSION["TYPEPROFIL"] === 'EN')
 		{
-			echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>.
-			<li class="nav-item dropdown">
-				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					 Activités
-				 </a>
-				 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					 <a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activite</a>
-					 <a class="dropdown-item" href="index.php?page=inscription">Inscription à une activité</a>
-				 </div>
-			 </li>
-
-			<li class="nav-item dropdown">
+			echo '<a class="nav-item nav-link" href="index.php?page=userProfilAdmin">Profil</a>';
+		}
+		else
+		{
+			echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+		}
+		 ?>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+				<ul class="dropdown-menu">
+					<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+						<ul class="dropdown-menu">
+							<?php
+							if ($_SESSION["TYPEPROFIL"] === 'EN')
+							{
+								echo '<li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>';
+							}
+							else
+							{
+								echo '';
+							}
+							?>
+						 </ul>
+					</li>
+					<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
+						<ul class="dropdown-menu">
+							<?php
+							if ($_SESSION["TYPEPROFIL"] === 'EN')
+							{
+								echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
+											<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
+							}
+							else
+							{
+								echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>';
+							}
+							?>
+						</ul>
+					</li>
+				</ul>
+	 	</li>
+		<?php
+		if ($_SESSION["TYPEPROFIL"] === 'EN')
+		{
+			echo '<li class="nav-item dropdown">
 				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					 Animations
 				 </a>
@@ -35,24 +68,13 @@ if (empty($_SESSION))
 		}
 		else
 		{
-			echo '
-			<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
-			<li class="nav-item dropdown">
-				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					 Activités
-				 </a>
-				 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					 <a class="dropdown-item" href="index.php?page=vueinscription">Liste des Inscriptions</a>
-					 <a class="dropdown-item" href="index.php?page=inscription">Inscription à une activité</a>
-				 </div>
-			 </li>';
+			echo '';
 		}
-		 ?>
+		?>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
-
 	</div>
 	<div class="mx-auto order-0">
-		<a class="navbar-brand mx-auto" href="#">Consulter une Activité</a>
+		<a class="navbar-brand mx-auto" href="#">Consulter les Activités</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -85,9 +107,13 @@ if (empty($_SESSION))
 				{
 					echo'<th scope="col">Inscriptions</th>
 							 <th scope="col">Action</th>';
-				} ?>
+				}
+				else
+				{
+					echo'<th scope="col">Inscriptions</th>';
+				}?>
 	    </tr>
-		</thead>
+			</thead>
 	      <?php
 				include_once('././fonctions/activite.php');
 				$activite = getActivites();
@@ -105,8 +131,6 @@ if (empty($_SESSION))
 					{
 						echo "<td>".$value."</td>";
 					}
-					if ($_SESSION["TYPEPROFIL"] === 'EN')
-					{
 					// A la fin du tableau on ajoute une colonne Actions permettant
 					// D'annuler une activité ou de modifier une activité via son numéro
 					$idActivity = $activite[$acti]["NOACT"];
@@ -121,9 +145,13 @@ if (empty($_SESSION))
 					$nomresp = $activite[$acti]["NOMRESP"];
 					$prenomresp = $activite[$acti]["PRENOMRESP"];
 					echo "<td>";
-					echo "<a href='index.php?page=inscription'>S'Inscrire</a>";
+					echo "<a href='index.php?page=creeInscription&id='.$idActivity.''>S'inscrire</a>";
 					echo '<br>';
-					echo "<a href='index.php?page=inscription'>Liste des inscrits</a>";
+					echo '<a href="index.php?page=mesInscriptions">Mon inscri.</a>';
+					echo '<br>';
+					if ($_SESSION["TYPEPROFIL"] === 'EN')
+					{
+					echo '<a href="index.php?page=vueInscription&id='.$idActivity.'">Tout les inscrits</a>';
 					echo '</td>';
 					echo '<td>';
 					echo '<a href="index.php?page=editionActivite
