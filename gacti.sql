@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 23 jan. 2021 à 13:46
+-- Généré le :  Dim 28 fév. 2021 à 13:29
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -44,19 +44,18 @@ CREATE TABLE IF NOT EXISTS `activite` (
   PRIMARY KEY (`NOACT`),
   KEY `I_FK_ACTIVITE_ANIMATION` (`CODEANIM`),
   KEY `I_FK_ACTIVITE_ETAT_ACT` (`CODEETATACT`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `activite`
 --
 
 INSERT INTO `activite` (`NOACT`, `CODEANIM`, `CODEETATACT`, `DATEACT`, `HRRDVACT`, `PRIXACT`, `HRDEBUTACT`, `HRFINACT`, `DATEANNULEACT`, `NOMRESP`, `PRENOMRESP`) VALUES
-(1, 'RAND', 'FE', '2020-06-20', '13:35:00', '10.00', '14:00:00', '16:30:00', '2020-08-01', 'Da Costa', 'Steven'),
-(3, 'SKIS', 'LB', '2020-12-10', '09:45:00', '100.00', '10:00:00', '13:00:00', '2020-12-06', 'Thomas', 'Le Bret'),
-(2, 'BABYFOO', 'FE', '2020-08-15', '13:30:00', '5.00', '14:00:00', '16:00:00', '2020-12-11', 'Da Costa', 'Steven'),
-(4, 'REPNOEL', 'LB', '2020-12-24', '17:30:00', '2.00', '18:00:00', '23:00:00', '2020-12-20', 'Thomas', 'Le Bret'),
-(5, 'szdef', 'FE', '2021-01-02', '05:23:00', '50.00', '12:03:00', '15:06:00', '2021-12-06', 'sqdfgh', 'szedfghj'),
-(6, 'fdgdfs', 'FE', '2021-01-16', '23:23:00', '25.00', '05:34:00', '04:35:00', '2021-01-31', 'zertyuh', 'ezwrtfyu');
+(3, 'SKI', 'LB', '2020-12-10', '09:45:00', '100.00', '10:00:00', '13:00:00', '0000-00-00', 'Thomas', 'Le Bret'),
+(2, 'BABYFOOT', 'LB', '2020-08-15', '13:30:00', '5.00', '14:00:00', '16:00:00', '0000-00-00', 'Da Costa', 'Steven'),
+(4, 'REPNOEL', 'LB', '2020-12-24', '17:30:00', '2.00', '18:00:00', '23:00:00', '0000-00-00', 'Thomas', 'Le Bret'),
+(9, 'LUGE', '', '2021-02-25', '11:20:00', '15.00', '12:05:00', '14:20:00', '2021-02-27', 'Steven', 'Da Costa'),
+(6, 'RANDONNE', 'FE', '2021-01-16', '23:23:00', '25.00', '05:34:00', '04:35:00', '2021-02-11', 'Da Costa', 'Steven');
 
 -- --------------------------------------------------------
 
@@ -90,9 +89,7 @@ INSERT INTO `animation` (`CODEANIM`, `CODETYPEANIM`, `NOMANIM`, `DATECREATIONANI
 ('Rando', 'EXT', 'Randonnée', '2020-06-10', '2020-06-17', 150, 90, '10.00', 15, 'Parcours de randonnée des environs', 'Je recommande pour la visite des environs', 'Facile'),
 ('Ski', 'SKI', 'Séance de Ski', '2020-12-01', '2020-12-07', 180, 7, '100.00', 20, 'Séance de ski dans la zone indiqué', 'C\'est fun, surtout en famille', 'Moyen'),
 ('Rep Noël', 'INT', 'Repas de noêl', '2020-12-10', '2020-12-20', 300, NULL, '2.00', 75, 'Repas de noël organisé à l\'occasion des fêtes de noël', 'Venez Nombreux :) !', 'Aucune'),
-('Babyfoot', 'INT', 'Tournoi de Babyfoot', '2020-08-04', '2020-08-13', 120, 10, '5.00', 40, 'Tournois de Babyfoot organisé par l\'établissement pour gagner le respect du village vacances', 'Jouer pour le respect :)', 'Avancé'),
-('ertx', 'werx', 'retyu', '2020-12-31', '2021-01-31', 54, 25, '25.00', 200, 'qswerdty', 'ertyu', 'sdfghjk'),
-('sqdfghj', 'qsdwe', 'desghjk', '2021-01-15', '2021-01-31', 23, 21, '50.00', 200, 'erdtyhujytrez', 'sdfghjkh gcfdsqz', 'Facile');
+('Babyfoot', 'INT', 'Tournoi de Babyfoot', '2020-08-04', '2020-08-13', 120, 10, '5.00', 40, 'Tournois de Babyfoot organisé par l\'établissement pour gagner le respect du village vacances', 'Jouer pour le respect :)', 'Avancé');
 
 -- --------------------------------------------------------
 
@@ -122,10 +119,10 @@ CREATE TABLE IF NOT EXISTS `compte` (
 --
 
 INSERT INTO `compte` (`USER`, `MDP`, `NOMCOMPTE`, `PRENOMCOMPTE`, `DATEINSCRIP`, `DATEFERME`, `TYPEPROFIL`, `DATEDEBSEJOUR`, `DATEFINSEJOUR`, `DATENAISCOMPTE`, `ADRMAILCOMPTE`, `NOTELCOMPTE`) VALUES
-('Tho_03', 'MDP04', 'Thomas', 'LeBret', '2020-11-23', '2021-02-10', 'EN', '2020-10-04', '2020-12-30', '2000-04-06', 'Thomas.LeBret@vva.com', '0679846513'),
-('Max_02', 'MDP02', 'Max', 'GABRIEL', '2020-01-15', '2021-04-07', 'VA', '2020-06-02', '2020-06-24', '1995-04-22', 'Max.Gabriel@vva.com', '0633333333'),
-('Adri_01', 'MDP03', 'Adri', 'UN', '2020-05-05', '2021-12-18', 'VA', '2020-12-02', '2020-12-30', '1999-03-18', 'Adri.deux@vva.com', '0615263580'),
-('Steve_00', 'MDP01', 'Steven', 'DA COSTA', '2020-04-07', '2021-03-08', 'EN', '2020-06-05', '2020-08-31', '2000-07-15', 'Steven.dacosta@vva.com', '0601020304');
+('Tho_03', 'MDP04', 'Thomas', 'LeBret', '2020-11-23', '2021-02-10', 'EN', '2020-10-04', '2020-12-30', '2000-04-06', 'thomas.LeBret@vva.com', '0679846513'),
+('Max_02', 'MDP02', 'Max', 'GABRIEL', '2020-01-15', '2021-04-07', 'VA', '2020-06-02', '2020-06-24', '1995-04-22', 'max.Gabriel@vva.com', '0633333333'),
+('Adri_01', 'MDP03', 'Adri', 'UN', '2020-05-05', '2021-12-18', 'VA', '2020-12-02', '2020-12-30', '1999-03-18', 'adri.deux@vva.com', '0615263580'),
+('Steve_00', 'MDP01', 'Steven', 'DA COSTA', '2020-04-07', '2021-03-08', 'EN', '2020-06-05', '2020-08-31', '2000-07-15', 'steven.dacosta@vva.com', '0601020304');
 
 -- --------------------------------------------------------
 
@@ -156,7 +153,25 @@ CREATE TABLE IF NOT EXISTS `inscription` (
   PRIMARY KEY (`NOINSCRIP`),
   KEY `I_FK_INSCRIPTION_COMPTE` (`USER`),
   KEY `I_FK_INSCRIPTION_ACTIVITE` (`NOACT`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `inscription`
+--
+
+INSERT INTO `inscription` (`NOINSCRIP`, `USER`, `NOACT`, `DATEINSCRIP`, `DATEANNULE`) VALUES
+(7, 'Max_02', 2, '2021-02-25', '0000-00-00'),
+(26, 'Max_02', 3, '2021-02-28', '0000-00-00'),
+(17, 'Steve_00', 9, '2021-02-26', '0000-00-00'),
+(8, 'Steve_00', 3, '2021-02-27', '2021-02-26'),
+(25, 'Max_02', 2, '2021-02-28', '0000-00-00'),
+(24, 'Max_02', 3, '2021-02-28', '0000-00-00'),
+(15, 'Steve_00', 4, '2021-02-25', '0000-00-00'),
+(14, 'Steve_00', 3, '2021-02-25', '0000-00-00'),
+(13, 'Steve_00', 3, '2021-02-25', '0000-00-00'),
+(23, 'Max_02', 3, '2021-02-28', '0000-00-00'),
+(22, 'Steve_00', 3, '2021-02-28', '0000-00-00'),
+(27, 'Max_02', 4, '2021-02-28', '0000-00-00');
 
 -- --------------------------------------------------------
 
