@@ -19,7 +19,59 @@ if (empty($_SESSION))
 				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
 			}
 			 ?>
-			<a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter une Activite</a>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+							<ul class="dropdown-menu">
+								<?php
+								if ($_SESSION["TYPEPROFIL"] === 'EN')
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activité</a></li>';
+									echo '<li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>';
+								}
+								else
+								{
+									echo '';
+								}
+								?>
+							 </ul>
+						</li>
+						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
+							<ul class="dropdown-menu">
+								<?php
+								if ($_SESSION["TYPEPROFIL"] === 'EN')
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
+												<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
+								}
+								else
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>';
+								}
+								?>
+							</ul>
+						</li>
+					</ul>
+		 	</li>
+			<?php
+			if ($_SESSION["TYPEPROFIL"] === 'EN')
+			{
+				echo '<li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						 Animations
+					 </a>
+					 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
+						 <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
+					 </div>
+				 </li>';
+			}
+			else
+			{
+				echo '';
+			}
+			?>
     <a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 	</div>
 	<div class="mx-auto order-0">

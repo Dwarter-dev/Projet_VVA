@@ -15,24 +15,49 @@ if (empty($_SESSION))
     <ul class="navbar-nav mr-auto">
 			<a class="nav-item nav-link" href="index.php?page=accueil">Village Vacances Alpes </a>
 			<li class="nav-item dropdown">
-		  	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    	Animations
-		    </a>
-		    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		      <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
-		    	<a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
-		    </div>
-	  	</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Activités
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activite</a>
-					<a class="dropdown-item" href="index.php?page=consulterActivite">Consulter une Activite</a>
-          <a class="dropdown-item" href="index.php?page=inscription">S'inscrire à une activité</a>
-				</div>
-			</li>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+							<ul class="dropdown-menu">
+								<?php
+								if ($_SESSION["TYPEPROFIL"] === 'EN')
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>
+												<li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>';
+								}
+								else
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>';
+								}
+								?>
+							 </ul>
+						</li>
+						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
+							<ul class="dropdown-menu">
+								<?php
+								if ($_SESSION["TYPEPROFIL"] === 'EN')
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
+												<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
+								}
+								else
+								{
+									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>';
+								}
+								?>
+							</ul>
+						</li>
+					</ul>
+		 </li>
+		 <li class="nav-item dropdown">
+			 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				 Animations
+			 </a>
+			 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				 <a class="dropdown-item" href="index.php?page=creeAnimation">Créer une Animation</a>
+				 <a class="dropdown-item" href="index.php?page=consulterAnimation">Consulter une Animation</a>
+			 </div>
+		 </li>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 		</ul>
 	</div>
