@@ -10,10 +10,14 @@ function getInscription() {
     //var_dump($_SESSION);
     $req =
     '
-    SELECT *
-    FROM inscription
+    SELECT i.NOINSCRIP,i.USER,i.NOACT,i.DATEINSCRIP,i.DATEANNULE
+    FROM inscription i, activite
     WHERE USER = "'.$_SESSION['USER'].'"
-    AND inscription.DATEANNULE = "0000-00-00"';
+    AND i.DATEANNULE = "0000-00-00"
+    AND i.NOACT = activite.NOACT
+    AND activite.DATEANNULEACT = "0000-00-00"';
+
+    //AND i.NOACT = activite.NOACT → on compare si l'activité et l'inscription ont le même code
 
     $res = mysqli_query($con, $req);
     $inscription = []; //Va regrouper toutes les inscriptions
