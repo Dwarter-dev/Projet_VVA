@@ -45,6 +45,9 @@ if(!empty($_GET['page'])) {
         case 'mesInscriptions':
         include('vue/inscription/mesInscriptions.php');
         break;
+        case 'trierInscription':
+        include('vue/inscription/trierInscription.php');
+        break;
     }
 } else {
     header('Location: index.php?page=accueil');
