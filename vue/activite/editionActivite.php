@@ -43,7 +43,7 @@ if (empty($_SESSION))
 								if ($_SESSION["TYPEPROFIL"] === 'EN')
 								{
 									echo '<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
-												<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>';
+												<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste de tout les inscrits</a></li>';
 								}
 								else
 								{

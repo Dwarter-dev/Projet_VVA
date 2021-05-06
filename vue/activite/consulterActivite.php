@@ -24,7 +24,7 @@ if (empty($_SESSION))
 						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a></li>
-								<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>
+								<li><a class="dropdown-item" href="index.php?page=vueInscription">Liste de tout les inscrits</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -39,7 +39,8 @@ if (empty($_SESSION))
 		}
 		else
 		{
-			echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
+			echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>
+						<a class="nav-item nav-link" href="index.php?page=mesInscriptions">Liste de mes inscriptions</a>';
 		}
 		 ?>
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
@@ -62,8 +63,8 @@ if (empty($_SESSION))
 	<table class="table">
 		<thead class="thead-dark">
 	    <tr>
+	      <th scope="col">Numéro Activité</th>
 	      <th scope="col">Code Animation</th>
-	      <th scope="col">Nom Activite</th>
 	      <th scope="col">Code Etat de l'Activite</th>
 	      <th scope="col">Date de l'Activite</th>
 	      <th scope="col">Heures du RDV</th>
@@ -118,12 +119,12 @@ if (empty($_SESSION))
 					echo "<td>";
 					echo '<a href="index.php?page=creeInscription&id='.$idActivity.'">S´inscrire</a>';
 					echo '<br>';
-					echo '<a href="index.php?page=mesInscriptions">Mon inscri.</a>';
+					echo '<a href="index.php?page=mesInscriptions">Mes inscri.</a>';
 					echo '<br>';
 					if ($_SESSION["TYPEPROFIL"] === 'EN')
 					{
-					echo '<a href="index.php?page=vueInscription&id='.$idActivity.'">Tout les inscrits</a>';
-					echo '</td>';
+					echo '<a href="index.php?page=trierInscription&id='.$idActivity.'">Liste des inscrits</a>';
+				  echo '<br>';
 					echo '<td>';
 					echo '<a href="index.php?page=editionActivite
 					&id='.$idActivity.'

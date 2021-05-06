@@ -54,7 +54,7 @@ if (empty($_SESSION))
 		<a class="nav-item nav-link" href="index.php?page=deconnexion">Déconnexion</a>
 	</div>
 	<div class="mx-auto order-0">
-		<a class="navbar-brand mx-auto" href="#">Liste des Inscrits</a>
+		<a class="navbar-brand mx-auto" href="#">Liste de tout les Inscrits</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 				<span class="navbar-toggler-icon"></span>
 			</button>
