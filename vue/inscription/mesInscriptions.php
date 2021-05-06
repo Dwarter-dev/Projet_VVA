@@ -19,31 +19,31 @@ if (empty($_SESSION))
 				echo '<a class="nav-item nav-link" href="index.php?page=userProfilUser">Profil</a>';
 			}
 			 ?>
-			 <li class="nav-item dropdown">
-				 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
-					 <ul class="dropdown-menu">
-						 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
-							 <ul class="dropdown-menu">
-								 <?php
-								 if ($_SESSION["TYPEPROFIL"] === 'EN')
-								 {
-									 echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>
-												 <li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>';
-								 }
-								 else
-								 {
-									 echo '<li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>';
-								 }
-								 ?>
-								</ul>
-						 </li>
-						 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
-							 <ul class="dropdown-menu">
-								 <li><a class="dropdown-item" href="index.php?page=vueInscription">Liste des inscrits</a></li>
-							 </ul>
-						 </li>
-					 </ul>
-			 </li>
+			 <?php
+			 if ($_SESSION["TYPEPROFIL"] === 'EN')
+			 {
+				 echo '<li class="nav-item dropdown">
+								 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" > Activités </a>
+									 <ul class="dropdown-menu">
+										 <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des activités</a>
+											 <ul class="dropdown-menu">
+													 <li><a class="dropdown-item" href="index.php?page=consulterActivite">Consulter les Activités</a></li>
+													 <li><a class="dropdown-item" href="index.php?page=creeActivite">Créer une Activité</a></li>
+											 </ul>
+										</li>
+										<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gestion des inscriptions</a>
+			 							 <ul class="dropdown-menu">
+										 <li><a class="dropdown-item" href="index.php?page=vueInscription">Liste de tout les inscrits</a></li>
+										 </ul>
+									 </li>
+								 </ul>
+						 	 </li>';
+			 }
+			 else
+			 {
+				 echo '<li><a class="nav-item nav-link" href="index.php?page=consulterActivite">Consulter les Activités</a></li>';
+			 }
+			 ?>
 			 <?php
 			 if ($_SESSION["TYPEPROFIL"] === 'EN')
 			 {
