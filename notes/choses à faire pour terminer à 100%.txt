@@ -1,3 +1,0 @@
--Réussir à faire supprimer une activité mais aussi supprimer les inscriptions
-lié à cette activité
--Réussir à afficher la liste des inscriptions avec le numéro correspondant
